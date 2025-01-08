@@ -50,7 +50,7 @@ and the results of both tasks (left and right) are summed and returned.
             ParallelismExample rightTask = new ParallelismExample(array, half, end);
             leftTask.fork();
             int rightResult = rightTask.compute();
-            int leftResult = leftTask.join();
+            int leftResult = leftTask.join(); // join waits for the thread to end
             return leftResult + rightResult;
         }
     }
