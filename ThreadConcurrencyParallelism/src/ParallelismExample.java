@@ -18,7 +18,7 @@ public class ParallelismExample extends RecursiveTask<Integer> {
         this.end = end;
     }
 /*
-Method.
+Method compute
 If the task range is small enough (i.e., end - start <= threshold),
 the sum of the elements in the array within the range defined by start and end is computed.
 

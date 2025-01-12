@@ -1,3 +1,17 @@
+/**
+ * SumConcurrency uses traditional threads to divide the task
+ * of summing the elements of a large array into multiple parts.
+ * In this case, it creates a fixed number of threads,
+ * and each thread handles summing a portion of the array.
+ * At the end, the results of the threads are combined to obtain the total sum.
+ *
+ * Each thread works independently on a section of the array.
+ * It uses Thread.join() to wait for all threads to finish before continuing.
+ * The number of threads is fixed and determined in advance.
+ */
+/
+
+
 public class SumConcurrency extends Thread{
     private int[] array;
     private int sum;
