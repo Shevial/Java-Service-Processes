@@ -1,3 +1,10 @@
+/**
+ * The Treasury class manages a synchronized balance with deposit and retire methods.
+ * The deposit method increases the balance and notifies waiting threads,
+ * while the retire method waits if the balance is insufficient,
+ * then reduces the balance once sufficient funds are available.
+ */
+
 public class Treasury {
     private int balance = 0;
     public synchronized void deposit(int amount){
