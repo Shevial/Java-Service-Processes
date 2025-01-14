@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BasicRedSockets/BasicRedSockets.iml" filepath="$PROJECT_DIR$/BasicRedSockets/BasicRedSockets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/RedSocketsExamples.iml" filepath="$PROJECT_DIR$/.idea/RedSocketsExamples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SecureRedSockets/SecureRedSockets.iml" filepath="$PROJECT_DIR$/SecureRedSockets/SecureRedSockets.iml" />
+    </modules>
+  </component>
+</project>
