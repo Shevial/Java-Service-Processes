@@ -23,7 +23,7 @@ public class BasicoSocketCliente {
             OutputStream os = cliente.getOutputStream();
 
             //envía
-            String mensaje_enviado="hola, soy cliente";
+            String mensaje_enviado = "hola, soy cliente";
             os.write(mensaje_enviado.getBytes()); //envío de información
 
             //lee:
