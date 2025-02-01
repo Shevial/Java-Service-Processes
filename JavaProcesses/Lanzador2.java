@@ -6,6 +6,7 @@ public class Lanzador2 {
             // Definimos un vector de Strings con el comando
             // y los argumentos. En este caso, lanzamos el comando 
             // firefox y una URL como argumento.
+            //Para que funcione, verificar path del sistema y especificar la ruta completa del ejecutable de Firefox
             String app[] = {"firefox", "https://docs.oracle.com/en/java/javase/17/core/process-api1.html"};
             
             // Creamos el ProcessBuilder
