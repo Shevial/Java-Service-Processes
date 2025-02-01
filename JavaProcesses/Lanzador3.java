@@ -5,6 +5,7 @@ public class Lanzador3 {
     public static void main(String[] args) {
         try {
             // Creación del processBuilder
+            //Para que funcione, verificar path del sistema y especificar la ruta completa del ejecutable de Firefox
             String app[] = {"firefox", "https://docs.oracle.com/en/java/javase/17/core/process-api1.html"};
             // Otras alternativas para lanzar, por ejemplo un editor de texto
             // Linux: Escritorio KDE-Plasma
