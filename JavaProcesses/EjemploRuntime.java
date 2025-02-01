@@ -47,8 +47,7 @@ public class EjemploRuntime {
         System.out.println("\n-----Estado después de crear 10.000 objetos:-----");
         ejRt.InfoMem();
 
-        // Ahora invocamos al Garbage Collector, para que
-        // elimine las referencias no usadas
+        // Ahora invocamos al Garbage Collector, para que elimine las referencias no usadas
         ejRt.InvocarGB();
 
         // Y volvemos a obtener los mismos datos
