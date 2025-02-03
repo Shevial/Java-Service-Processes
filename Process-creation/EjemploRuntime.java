@@ -34,7 +34,7 @@ public class EjemploRuntime {
         ejRt.InfoCPU();
 
         // Mostramos el estado actual de la memoria de la JVM
-        System.out.println("\n---------Estatdo inicial----------");
+        System.out.println("\n---------Estado inicial----------");
         ejRt.InfoMem();
         
         
