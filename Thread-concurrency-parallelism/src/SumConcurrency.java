@@ -9,7 +9,7 @@
  * It uses Thread.join() to wait for all threads to finish before continuing.
  * The number of threads is fixed and determined in advance.
  */
-/
+
 
 
 public class SumConcurrency extends Thread{
