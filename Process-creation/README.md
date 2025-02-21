@@ -67,7 +67,8 @@ Java no tiene una clase propia para representar un proceso de forma directa debi
 - Se instancia `ProcessBuilder` con el comando deseado.
 - Se inicia el proceso y se obtiene su `InputStream`.
 - Se lee la salida del proceso línea por línea.
-- Se espera a que el proceso finalice.
+- Se espera a que el proceso finalice con isAlive que devuelve si el proceso sigue vivo o no.
+- Si el proceso sigue vivo, esperaremos un milisegundo, y mostraremos un mensaje.
 
 **Resumen**:
 - Este método permite capturar la salida del proceso en tiempo real, útil para leer resultados generados por el comando sin necesidad de redireccionar a un archivo.
