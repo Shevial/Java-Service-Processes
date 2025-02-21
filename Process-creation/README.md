@@ -39,7 +39,6 @@ Java no tiene una clase propia para representar un proceso de forma directa debi
 **Paso a paso**:
 - Se crea una instancia de `ProcessBuilder` con el comando que se desea ejecutar.
 - Se inicia el proceso con `start()`.
-- Se espera a que el proceso termine usando `waitFor()`.
 
 **Resumen**:
 - Este ejemplo ilustra la manera más simple de usar `ProcessBuilder` para ejecutar comandos externos. Permite lanzar procesos y esperar su finalización.
