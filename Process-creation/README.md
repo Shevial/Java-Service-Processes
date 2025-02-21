@@ -53,7 +53,6 @@ Java no tiene una clase propia para representar un proceso de forma directa debi
 - Se crea el objeto `ProcessBuilder` con el comando a ejecutar.
 - Se configura la redirección de la salida del proceso para que se escriba en la consola o en un archivo.
 - Se ejecuta el proceso con `start()`.
-- Se espera a que finalice con `waitFor()`.
 
 **Resumen**:
 - Este ejemplo muestra cómo redirigir la salida de un proceso, lo que es útil cuando se necesita capturar su salida en un archivo o en la consola.
