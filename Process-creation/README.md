@@ -74,7 +74,7 @@ Java no tiene una clase propia para representar un proceso de forma directa debi
 - Este método permite capturar la salida del proceso en tiempo real, útil para leer resultados generados por el comando sin necesidad de redireccionar a un archivo.
 
 ---
-### `Lanzador4.java`
+### 4. `Lanzador4.java`
 
 **Descripción**
 En este ejemplo se demuestra cómo iniciar un proceso externo desde Java utilizando `ProcessBuilder` y obtener información detallada del mismo mediante `ProcessHandle.Info`.
