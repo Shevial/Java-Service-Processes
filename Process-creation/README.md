@@ -74,12 +74,12 @@ Java no tiene una clase propia para representar un proceso de forma directa debi
 - Este método permite capturar la salida del proceso en tiempo real, útil para leer resultados generados por el comando sin necesidad de redireccionar a un archivo.
 
 ---
-## Lanzador4.java
+### `Lanzador4.java`
 
-### Descripción
+**Descripción**
 En este ejemplo se demuestra cómo iniciar un proceso externo desde Java utilizando `ProcessBuilder` y obtener información detallada del mismo mediante `ProcessHandle.Info`.
 
-### Paso a paso
+**Paso a paso**:
 1. Se crea un array `app[]` con el comando y los argumentos necesarios para lanzar una aplicación externa.
 2. Se instancia un `ProcessBuilder` con el array de comandos.
 3. Se inicia el proceso con `pb.start()`, lo que devuelve un objeto `Process`.
@@ -91,11 +91,11 @@ En este ejemplo se demuestra cómo iniciar un proceso externo desde Java utiliza
    - **Usuario que ejecuta el proceso**.
 5. Se imprimen los detalles del proceso en la consola.
 
-### Resumen
+**Resumen**:
 - Este programa permite ejecutar aplicaciones externas desde Java y obtener información relevante del proceso en ejecución.
 - Es útil para la monitorización y gestión de procesos iniciados desde un programa Java.
 
-### Ejemplo de ejecución
+**Ejemplo**:
 Si se ejecuta en un sistema con **Firefox instalado**, abrirá la URL especificada en el código:
 ```shell
 PID: 12345
