@@ -110,7 +110,7 @@ Usuario: usuarioEjemplo
 
 ### 5. `EjemploRuntime.java`
 
-**Descripción**: ## EjemploRuntime.java
+**Descripción**: 
 
 Este programa en Java utiliza la clase `Runtime` para obtener información sobre los recursos del sistema, incluyendo procesadores disponibles y memoria utilizada por la JVM. Además, permite invocar manualmente el recolector de basura (Garbage Collector).
 
