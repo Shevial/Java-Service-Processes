@@ -41,7 +41,11 @@ public class Server {
 
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(5000);
+
+        System.out.println("A new server has been started in port 5000!");
+        System.out.println("Waiting for client to connect...");
         Server server = new Server(serverSocket);
+
         server.starServer();
     }
 

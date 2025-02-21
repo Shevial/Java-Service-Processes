@@ -12,8 +12,8 @@ public class Client {
     public Client(Socket socket, String username) {
         try {
             this.socket = socket;
-            this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream())); //To get what we have to read
+            this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())); //To get what we have to write
             this.username = username;
         } catch (IOException e) {
             closeAll(socket, bufferedReader, bufferedWriter);
@@ -29,7 +29,7 @@ public class Client {
             Scanner scanner = new Scanner(System.in);
             while (socket.isConnected()) {
                 String messageToSend = scanner.nextLine();
-                bufferedWriter.write(username + ": " + messageToSend);
+                bufferedWriter.write(username + "Wrote: " + messageToSend);
                 bufferedWriter.newLine();
                 bufferedWriter.flush();
             }
@@ -46,7 +46,7 @@ public class Client {
                 while (socket.isConnected()) {
                     try {
                         messageFromGroupChat = bufferedReader.readLine();
-                        System.out.println(messageFromGroupChat);
+                        System.out.println(messageFromGroupChat); //message to print
                     } catch (IOException e) {
                         closeAll(socket, bufferedReader, bufferedWriter);
                     }
@@ -73,12 +73,12 @@ public class Client {
 
 
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); //opens scanner
         System.out.println("Enter your username for group chat: ");
-        String username = scanner.nextLine();
+        String username = scanner.nextLine(); //ask for username
 
-        Socket socket = new Socket("127.0.0.1", 5000);
-        Client client = new Client(socket, username);
+        Socket socket = new Socket("127.0.0.1", 5000); //connection
+        Client client = new Client(socket, username); //creating client
         client.listenForMessages();
         client.sendMessage();
     }

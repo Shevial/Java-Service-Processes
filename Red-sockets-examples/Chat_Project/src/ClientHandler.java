@@ -1,7 +1,7 @@
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
-
+// para poder manejar que se conecten varios clientes a la vez, se ha creado un arraylist de clientes (que podría ser un conjunto para evitar clientes con el mismo nombre)
 public class ClientHandler implements Runnable {
 
     public static ArrayList<ClientHandler> clientHandlers = new ArrayList<>();
@@ -17,8 +17,8 @@ public class ClientHandler implements Runnable {
             this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             this.clientUserName = bufferedReader.readLine();
-            clientHandlers.add(this);
-            broadCastMessage("SERVER: " + clientUserName + " has entered the chat!");
+            clientHandlers.add(this); // adding client to the array
+            broadCastMessage("SERVER: " + clientUserName + " has entered the chat!"); //this method allows every member to recieve the message
         } catch (IOException e) {
             closeAll(socket, bufferedReader, bufferedWriter);
         }
@@ -41,7 +41,7 @@ public class ClientHandler implements Runnable {
 
     // Send a message to everyone except me.
     public void broadCastMessage(String messageToSend) {
-        for (ClientHandler clientHandler : clientHandlers) {
+        for (ClientHandler clientHandler : clientHandlers) { //for each
             try {
                 if (!clientHandler.clientUserName.equals(this.clientUserName)) {
                     clientHandler.bufferedWriter.write(messageToSend);
