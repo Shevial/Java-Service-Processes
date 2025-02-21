@@ -74,19 +74,37 @@ Java no tiene una clase propia para representar un proceso de forma directa debi
 - Este método permite capturar la salida del proceso en tiempo real, útil para leer resultados generados por el comando sin necesidad de redireccionar a un archivo.
 
 ---
+## Lanzador4.java
 
-### 4. `Lanzador4.java`
+### Descripción
+En este ejemplo se demuestra cómo iniciar un proceso externo desde Java utilizando `ProcessBuilder` y obtener información detallada del mismo mediante `ProcessHandle.Info`.
 
-**Descripción**: En este archivo se muestra cómo manejar la entrada y salida estándar del proceso, permitiendo interactuar con él.
+### Paso a paso
+1. Se crea un array `app[]` con el comando y los argumentos necesarios para lanzar una aplicación externa.
+2. Se instancia un `ProcessBuilder` con el array de comandos.
+3. Se inicia el proceso con `pb.start()`, lo que devuelve un objeto `Process`.
+4. Se obtiene información del proceso con `ProcessHandle.Info`, incluyendo:
+   - **PID (Process ID)** del proceso.
+   - **Comando ejecutado**.
+   - **Línea de comando completa**.
+   - **Hora de inicio del proceso**.
+   - **Usuario que ejecuta el proceso**.
+5. Se imprimen los detalles del proceso en la consola.
 
-**Paso a paso**:
-- Se crea el `ProcessBuilder` con el comando.
-- Se redirigen la entrada y salida del proceso.
-- Se obtiene un `OutputStream` para enviar datos al proceso.
-- Se obtienen y procesan los datos de salida.
+### Resumen
+- Este programa permite ejecutar aplicaciones externas desde Java y obtener información relevante del proceso en ejecución.
+- Es útil para la monitorización y gestión de procesos iniciados desde un programa Java.
 
-**Resumen**:
-- Este ejemplo permite interactuar con el proceso enviando datos a su entrada y leyendo su salida, útil para comandos que requieren interacción del usuario.
+### Ejemplo de ejecución
+Si se ejecuta en un sistema con **Firefox instalado**, abrirá la URL especificada en el código:
+```shell
+PID: 12345
+Comando: /usr/bin/firefox
+Línea de comando: firefox https://docs.oracle.com/en/java/javase/17/core/process-api1.html
+Hora de inicio: 2024-02-20T12:34:56.789Z
+Usuario: usuarioEjemplo
+```
+
 
 ---
 
