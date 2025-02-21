@@ -110,16 +110,44 @@ Usuario: usuarioEjemplo
 
 ### 5. `EjemploRuntime.java`
 
-**Descripción**: Este archivo muestra cómo ejecutar un proceso usando `Runtime`.
+**Descripción**: ## EjemploRuntime.java
+
+Este programa en Java utiliza la clase `Runtime` para obtener información sobre los recursos del sistema, incluyendo procesadores disponibles y memoria utilizada por la JVM. Además, permite invocar manualmente el recolector de basura (Garbage Collector).
 
 **Paso a paso**:
-- Se obtiene una instancia de `Runtime` mediante `getRuntime()`.
-- Se ejecuta el comando con `exec()`.
-- Se espera la finalización con `waitFor()`.
-- Se puede capturar la salida del proceso si es necesario.
+1. Se obtiene una referencia al entorno de ejecución con `Runtime.getRuntime()`.
+2. Se imprime el número de procesadores disponibles en el sistema.
+3. Se muestra la cantidad de memoria total y libre en la JVM.
+4. Se crean 10,000 objetos para observar el impacto en la memoria.
+5. Se imprime el estado de la memoria antes y después de la creación de los objetos.
+6. Se invoca al **Garbage Collector** con `gc()` y se muestra nuevamente el estado de la memoria.
 
 **Resumen**:
-- `Runtime.exec()` es un método directo y fácil de usar para ejecutar comandos sin configuraciones avanzadas. Sin embargo, su flexibilidad es menor comparada con `ProcessBuilder`.
+- **`InfoCPU()`**: Muestra los procesadores disponibles en el sistema.
+- **`InfoMem()`**: Muestra la memoria total, libre y ocupada en la JVM.
+- **`InvocarGB()`**: Invoca al recolector de basura para liberar memoria.
+
+**Ejemplo**:
+```shell
+Procesadores disponibles: 8
+
+---------Estado inicial----------
+Memoria Total: 123456789
+Memoria Libre: 98765432
+Memoria ocupada: 24691357
+
+-----Estado después de crear 10.000 objetos:-----
+Memoria Total: 123456789
+Memoria Libre: 54321678
+Memoria ocupada: 69135111
+
+-----Estado después de invocar al recolector de basura-----
+Memoria Total: 123456789
+Memoria Libre: 87654321
+Memoria ocupada: 35802468
+```
+
+Este código es útil para comprender cómo la JVM maneja la memoria y cómo el recolector de basura afecta su uso.
 
 ---
 
