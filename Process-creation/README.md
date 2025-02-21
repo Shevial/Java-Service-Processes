@@ -41,7 +41,7 @@ Java no tiene una clase propia para representar un proceso de forma directa debi
 - Se inicia el proceso con `start()`.
 
 **Resumen**:
-- Este ejemplo ilustra la manera más simple de usar `ProcessBuilder` para ejecutar comandos externos. Permite lanzar procesos y esperar su finalización.
+- Este ejemplo ilustra la manera más simple de usar `ProcessBuilder` para ejecutar comandos externos. Permite lanzar procesos.
 
 ---
 
