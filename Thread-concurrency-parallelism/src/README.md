@@ -44,11 +44,11 @@ Tiempo de ejecución: 130ms
 
 ### **Ventajas y Desventajas**  
 
-✅ **Ventajas:**  
+**Ventajas:**  
 - Implementación sencilla.  
 - Eficiente para tareas paralelas de pequeña escala.  
 
-❌ **Limitaciones:**  
+**Limitaciones:**  
 - El número fijo de hilos puede no aprovechar completamente los CPU multi-núcleo.  
 - La gestión manual de los hilos puede volverse compleja con cargas de trabajo más grandes.  
 
@@ -87,11 +87,11 @@ Tiempo de ejecución: 80ms
 
 ### **Ventajas y Desventajas**  
 
-✅ **Ventajas:**  
+**Ventajas:**  
 - Ajusta dinámicamente la carga de trabajo en todos los núcleos disponibles del CPU.  
 - Más eficiente para tareas paralelas de gran escala.  
 
-❌ **Limitaciones:**  
+**Limitaciones:**  
 - Requiere conocimientos del framework Fork/Join.  
 - La creación y gestión de tareas puede generar sobrecarga en tareas pequeñas.  
 
@@ -112,12 +112,12 @@ Tiempo de ejecución: 80ms
 
 ## ¿Cuándo Usar Cada Enfoque?  
 
-✅ **Usar `SumConcurrency` cuando:**  
+**Usar `SumConcurrency` cuando:**  
 - La carga de trabajo es pequeña y predecible.  
 - La simplicidad y claridad del código son prioritarias.  
 - Se tiene un número fijo de recursos (hilos).  
 
-✅ **Usar `ParallelismExample` cuando:**  
+**Usar `ParallelismExample` cuando:**  
 - Se trabaja con grandes volúmenes de datos o tareas computacionalmente intensivas.  
 - Se busca aprovechar al máximo los procesadores multi-núcleo.  
 - Se requiere un balance dinámico de carga de trabajo.  
