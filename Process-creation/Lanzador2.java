@@ -18,8 +18,8 @@ public class Lanzador2 {
             Process p2=pb.start();
 
             // Mostramos el PID de los procesos
-            System.out.println("PID del proceso 1: "+p1.pid());
-            System.out.println("PID del proceso 2: "+p2.pid());
+            System.out.println("PID del proceso 1: " + p1.pid());
+            System.out.println("PID del proceso 2: " + p2.pid());
         } catch (IOException e) {
             e.printStackTrace();
         }
