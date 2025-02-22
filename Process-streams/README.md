@@ -103,4 +103,24 @@ Ejemplo sencillo de cómo capturar y mostrar la salida de un proceso en la conso
 **Descripción:**  
 El archivo `calendario.txt` contiene el calendario del año 2022, generado al ejecutar el comando `cal 2022` a través de alguno de los ejemplos (por ejemplo, en `EjemploRedirect0.java`). Este archivo es una representación en texto plano del calendario, con la cabecera:
 
+------------- Calendario del año 2022 -----------------
+
+y luego el calendario formateado, que incluye:
+- Los nombres de los meses (por ejemplo, "De gener", "De febrer", etc.).
+- Los días organizados en columnas correspondientes a los días de la semana.
+
+**Utilidad:**  
+- **Visualización:** Proporciona una vista rápida del calendario en formato de texto.
+- **Práctica de redirección:** Sirve como ejemplo de cómo redirigir la salida de un proceso a un fichero.
+- **Entrada para procesamiento:** Puede utilizarse como fuente de datos para aplicaciones que necesiten analizar o transformar calendarios en texto, como convertirlo a otros formatos (CSV, JSON) o para realizar búsquedas específicas dentro del contenido.
+
+---
+
+## Conclusión
+
+Estos ejemplos muestran diversas técnicas para gestionar la entrada y salida de procesos en Java, desde la redirección de flujos a ficheros o a la consola, hasta la creación manual de tuberías entre procesos. Además, el archivo `calendario.txt` generado es un ejemplo práctico de cómo se puede utilizar la salida de un comando del sistema para producir un recurso que puede ser procesado o visualizado posteriormente.
+
+Este conjunto de ejemplos es fundamental para entender la interacción entre procesos externos y una aplicación Java, y proporciona una base sólida para la integración de procesos y el manejo de datos en tiempo real.
+
+---
 
