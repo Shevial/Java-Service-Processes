@@ -42,7 +42,7 @@ Has depositado 100
 Has depositado 100
 Has depositado 100
 Has depositado 100
-Has retirado 350
+Has retirado 350```
 
 - Inicialmente, el hilo de retiro (retire()) espera porque el saldo es cero.
 - El hilo de depósito (deposit()) agrega dinero en incrementos de 100 y notifica al hilo de retiro cada vez.
