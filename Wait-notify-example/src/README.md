@@ -36,14 +36,14 @@ Este programa demuestra la sincronización de hilos en Java utilizando los méto
     - Esto previene condiciones de carrera y asegura operaciones seguras entre hilos.
 
 ## Ejemplo de Salida (Flujo)
-```plaintext
+``` plaintext
 Esperando hasta que puedas retirar
 Has depositado 100
 Has depositado 100
 Has depositado 100
 Has depositado 100
-Has retirado 350```
-
+Has retirado 350 
+```
 - Inicialmente, el hilo de retiro (retire()) espera porque el saldo es cero.
 - El hilo de depósito (deposit()) agrega dinero en incrementos de 100 y notifica al hilo de retiro cada vez.
 - Una vez que el saldo llega a 350 o más, el hilo de retiro se despierta y completa la operación.
