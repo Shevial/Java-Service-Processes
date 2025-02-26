@@ -1,52 +1,52 @@
-# Treasury System with Threads
+# Sistema de Tesorería con Hilos
 
-This program demonstrates thread synchronization in Java using the `wait()` and `notify()` methods. It simulates a basic treasury system where threads can deposit and withdraw money from a shared account. The system ensures that no withdrawal occurs unless there is sufficient balance.
+Este programa demuestra la sincronización de hilos en Java utilizando los métodos `wait()` y `notify()`. Simula un sistema básico de tesorería donde los hilos pueden depositar y retirar dinero de una cuenta compartida. El sistema asegura que no se realice un retiro a menos que haya suficiente saldo.
 
-## Key Concepts Used
+## Conceptos Clave Utilizados
 
-### 1. **`wait()` Method**
-- The `wait()` method is used to pause the execution of a thread until another thread notifies it.
-- When called, the thread releases the lock on the object and enters a waiting state.
-- In this program, `wait()` is used in the `retire()` method to pause the withdrawal thread when the balance is insufficient.
+### 1. **Método `wait()`**
+- El método `wait()` se utiliza para pausar la ejecución de un hilo hasta que otro hilo lo notifique.
+- Cuando se llama, el hilo libera el bloqueo sobre el objeto y entra en un estado de espera.
+- En este programa, `wait()` se utiliza en el método `retire()` para pausar el hilo de retiro cuando el saldo es insuficiente.
 
-### 2. **`notify()` Method**
-- The `notify()` method wakes up one of the threads waiting on the same object's monitor.
-- It is used in the `deposit()` method to signal the withdrawal thread (`retire()`) that a deposit has been made and the balance might now be sufficient.
+### 2. **Método `notify()`**
+- El método `notify()` despierta uno de los hilos que está esperando en el mismo monitor del objeto.
+- Se utiliza en el método `deposit()` para señalizar al hilo de retiro (`retire()`) que se ha realizado un depósito y que el saldo ahora podría ser suficiente.
 
-## Program Flow
+## Flujo del Programa
 
-1. **Initialization**
-    - A `Treasury` object is created to represent the shared account.
-    - Two threads are instantiated:
-        - **Deposit Thread**: Adds money to the treasury in a loop.
-        - **Withdrawal Thread**: Attempts to withdraw a fixed amount from the treasury.
+1. **Inicialización**
+    - Se crea un objeto `Treasury` que representa la cuenta compartida.
+    - Se instancian dos hilos:
+        - **Hilo de Depósito**: Añade dinero a la tesorería en un bucle.
+        - **Hilo de Retiro**: Intenta retirar una cantidad fija de dinero de la tesorería.
 
-2. **Execution of Deposit Thread**
-    - The `deposit()` method adds a fixed amount (100) to the balance.
-    - After each deposit, it calls `notify()` to wake up the withdrawal thread if it is waiting.
-    - The thread sleeps for 1 second between deposits.
+2. **Ejecución del Hilo de Depósito**
+    - El método `deposit()` añade una cantidad fija (100) al saldo.
+    - Después de cada depósito, llama a `notify()` para despertar al hilo de retiro si está esperando.
+    - El hilo duerme durante 1 segundo entre depósitos.
 
-3. **Execution of Withdrawal Thread**
-    - The `retire()` method checks if the balance is sufficient for withdrawal (350).
-    - If the balance is insufficient, the thread enters a waiting state using `wait()`.
-    - Once notified, it rechecks the balance and proceeds if sufficient funds are available.
+3. **Ejecución del Hilo de Retiro**
+    - El método `retire()` verifica si el saldo es suficiente para el retiro (350).
+    - Si el saldo es insuficiente, el hilo entra en un estado de espera usando `wait()`.
+    - Una vez notificado, vuelve a verificar el saldo y procede si hay suficientes fondos disponibles.
 
-4. **Synchronization**
-    - The `synchronized` keyword ensures that only one thread can access the `deposit()` or `retire()` methods at a time.
-    - This prevents race conditions and ensures thread-safe operations.
+4. **Sincronización**
+    - La palabra clave `synchronized` asegura que solo un hilo pueda acceder a los métodos `deposit()` o `retire()` a la vez.
+    - Esto previene condiciones de carrera y asegura operaciones seguras entre hilos.
 
-## Example Output (Flow)
-```plaintext
-Waiting until you can retire
-You have deposit 100
-You have deposit 100
-You have deposit 100
-You have deposit 100
-You have retired 350
+## Ejemplo de Salida (Flujo)
+``` plaintext
+Esperando hasta que puedas retirar
+Has depositado 100
+Has depositado 100
+Has depositado 100
+Has depositado 100
+Has retirado 350 
 ```
-- Initially, the withdrawal thread (`retire()`) waits because the balance is zero.
-- The deposit thread (`deposit()`) adds money in increments of 100 and notifies the withdrawal thread each time.
-- Once the balance reaches 350 or more, the withdrawal thread wakes up and completes the operation.
+- Inicialmente, el hilo de retiro (retire()) espera porque el saldo es cero.
+- El hilo de depósito (deposit()) agrega dinero en incrementos de 100 y notifica al hilo de retiro cada vez.
+- Una vez que el saldo llega a 350 o más, el hilo de retiro se despierta y completa la operación.
 
-## Conclusion
-This example illustrates how to use `wait()` and `notify()` for effective communication between threads, ensuring that operations like deposits and withdrawals are executed in the correct order and without conflict.
+## Conclusión
+Este ejemplo ilustra cómo utilizar wait() y notify() para una comunicación efectiva entre hilos, asegurando que operaciones como depósitos y retiros se ejecuten en el orden correcto y sin conflictos.
