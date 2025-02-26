@@ -16,7 +16,7 @@ public class Servidor extends Conexion {
         salidaC=new DataOutputStream(cs.getOutputStream());
         salidaC.writeUTF("petición recibida");
         BufferedReader br=new BufferedReader(new InputStreamReader(cs.getInputStream()));
-        while((mensajeServidor=br.readLine())!=null){
+        while((mensajeServidor=br.readLine())! = null){
             System.out.println(mensajeServidor);
         }
         System.out.println("Fin de la conexión");
